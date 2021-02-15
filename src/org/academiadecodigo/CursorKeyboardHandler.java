@@ -8,7 +8,6 @@ import org.academiadecodigo.simplegraphics.graphics.Color;
 
 public class CursorKeyboardHandler implements KeyboardHandler {
     private Cursor cursor;
-    private Cell cell;
     private Grid grid;
 
     public CursorKeyboardHandler(Cursor cursor){
@@ -32,9 +31,7 @@ public class CursorKeyboardHandler implements KeyboardHandler {
                 cursor.moveLeft();
                 break;
             case KeyboardEvent.KEY_SPACE:
-                Rectangle rectangle = new Rectangle(cursor.getCursorLine(), cursor.getCursorColumn(), 10,10);
-                rectangle.setColor(Color.BLACK);
-                rectangle.fill();
+                cursor.paint();
                 break;
         }
 
