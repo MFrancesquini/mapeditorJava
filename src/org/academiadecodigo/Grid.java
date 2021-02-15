@@ -9,8 +9,11 @@ public class Grid {
     private int PADDING;
     private int WIDTH;
     private int HEIGTH;
+    public static Cell[][] matrix;
+    private Cursor cursor;
 
     public Grid(int PADDING, int WIDTH, int HEIGTH){
+        matrix = new Cell[WIDTH][HEIGTH];
         this.PADDING = PADDING;
         this.WIDTH = WIDTH;
         this.HEIGTH = HEIGTH;
@@ -22,10 +25,13 @@ public class Grid {
     }
 
     public void innerSquares(){
+
         int innerPadding=10, columnEnd=10, lineEnd=10;
         for (int j=0; j < 50; j++) {
+
             for (int i = 0; i < 50; i++) {
 
+                matrix[j][i] = new Cell();
                 Rectangle square = new Rectangle(innerPadding, innerPadding, columnEnd, lineEnd);
                 square.setColor(Color.BLACK);
                 square.draw();
@@ -36,6 +42,5 @@ public class Grid {
             columnEnd = 10;
         }
     }
-
 
 }
